@@ -1,0 +1,27 @@
+
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details about donation"
+        android:id="@+id/textView21" />
+
+    <EditText
+        android:layout_width="357dp"
+        android:layout_height="190dp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/EventDetail"
+        android:layout_x="16dp"
+        android:layout_y="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post Donation"
+        android:id="@+id/postEvent"
+        android:layout_x="122dp"
+        android:layout_y="287dp" />
+</AbsoluteLayout>
