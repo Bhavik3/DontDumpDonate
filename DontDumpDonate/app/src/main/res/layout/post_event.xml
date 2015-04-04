@@ -5,7 +5,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Details about donation"
+        android:text="Details about Event"
         android:id="@+id/textView21" />
 
     <EditText
@@ -22,6 +22,51 @@
         android:layout_height="wrap_content"
         android:text="Post Donation"
         android:id="@+id/postEvent"
-        android:layout_x="122dp"
-        android:layout_y="287dp" />
+        android:layout_x="134dp"
+        android:layout_y="336dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Venue"
+        android:id="@+id/textView25"
+        android:layout_x="2dp"
+        android:layout_y="231dp" />
+
+    <EditText
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/venue"
+        android:layout_x="109dp"
+        android:layout_y="216dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time (hh:mm)"
+        android:id="@+id/textView26"
+        android:layout_x="4dp"
+        android:layout_y="270dp" />
+
+    <EditText
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/time"
+        android:layout_x="109dp"
+        android:layout_y="257dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date(yy-mm-dd)"
+        android:id="@+id/textView27"
+        android:layout_x="5dp"
+        android:layout_y="313dp" />
+
+    <EditText
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"
+        android:layout_x="111dp"
+        android:layout_y="296dp" />
 </AbsoluteLayout>

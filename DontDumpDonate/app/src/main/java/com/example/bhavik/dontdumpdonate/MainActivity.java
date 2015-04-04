@@ -38,6 +38,7 @@ public class MainActivity extends ActionBarActivity {
 
     private int isAccess=-1;
     private String type;
+    private int ID;             //if of user
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,7 @@ public class MainActivity extends ActionBarActivity {
 
     private void signUp(){
         Intent i = new Intent(this,signUp.class);
+
         startActivity(i);
     }
 
@@ -120,25 +122,6 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void Connect() {
-        // TODO Auto-generated method stub
-        String userName = "\""+username.getText().toString()+"\"";
-        String passWord = "\""+password.getText().toString()+"\"";
-
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("username", userName));
-        params.add(new BasicNameValuePair("password", passWord));
-        jobj = clientServerInterface.makeHttpRequest("http://192.168.177.1/myfiles/get_donor_details.php",params);
-
-        try {
-            isAccess = jobj.getInt("success");
-            System.out.println(isAccess);
-        } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-
 
     class RetreiveData extends AsyncTask<String,String,String> {
 
@@ -155,6 +138,11 @@ public class MainActivity extends ActionBarActivity {
 
             try {
                 isAccess = jobj.getInt("success");
+                if(isAccess==0){
+                    jobj = clientServerInterface.makeHttpRequest("http://192.168.177.1/myfiles/get_ngo_details.php",params);
+                }
+                isAccess = jobj.getInt("success");
+                ID = jobj.getInt("id");
                 type = jobj.getString("type");
                 System.out.println(isAccess);
             } catch (JSONException e) {
@@ -176,9 +164,11 @@ public class MainActivity extends ActionBarActivity {
                     userId = 2;
 
                 i.putExtra("USER_ID",userId);
+                i.putExtra("ID",ID);
                 startActivity(i);
                 finish();
             }else{
+
                 new AlertDialog.Builder(MainActivity.this).setMessage("Username or password is wrong!!").show();
             }
         }

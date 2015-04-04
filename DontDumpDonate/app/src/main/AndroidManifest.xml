@@ -19,19 +19,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Profile"
+            android:name=".profile"
             android:label="@string/title_activity_profile" >
         </activity>
         <activity
-            android:name=".signup"
+            android:name=".signUp"
             android:label="@string/title_activity_signup" >
         </activity>
         <activity
-            android:name=".NGO_SignUp"
+            android:name=".ngoSignUp"
             android:label="@string/title_activity_ngo__sign_up" >
         </activity>
         <activity
-            android:name=".GeneralUser_signUp"
+            android:name=".generalUserSignUp"
             android:label="@string/title_activity_general_user_sign_up" >
         </activity>
         <activity

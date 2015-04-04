@@ -40,7 +40,8 @@
         android:layout_alignEnd="@+id/username"
         android:layout_toRightOf="@+id/pass"
         android:layout_toEndOf="@+id/pass"
-        android:textIsSelectable="false" />
+        android:textIsSelectable="false"
+        android:background="@drawable/edit_text"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -63,12 +64,13 @@
         android:layout_alignRight="@+id/button2"
         android:layout_alignEnd="@+id/button2"
         android:layout_toRightOf="@+id/User"
-        android:layout_toEndOf="@+id/User" />
+        android:layout_toEndOf="@+id/User"
+        android:background="@drawable/edit_text"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forget Password"
+        android:text="Forgot Password"
         android:id="@+id/button2"
         android:layout_alignTop="@+id/button"
         android:layout_alignParentRight="true"

@@ -75,9 +75,9 @@
         android:layout_height="wrap_content"
         android:text="Pin Code"
         android:id="@+id/textView19"
-        android:layout_alignBottom="@+id/editText8"
-        android:layout_alignRight="@+id/textView13"
-        android:layout_alignEnd="@+id/textView13" />
+        android:layout_alignBottom="@+id/PinCode"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -160,7 +160,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText8"
+        android:id="@+id/PinCode"
         android:layout_below="@+id/textView18"
         android:layout_toRightOf="@+id/textView18"
         android:layout_toEndOf="@+id/textView18" />
@@ -171,7 +171,17 @@
         android:text="Submit"
         android:id="@+id/Submit"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/editText8"
-        android:layout_alignStart="@+id/editText8" />
+        android:layout_alignLeft="@+id/PinCode"
+        android:layout_alignStart="@+id/PinCode" />
+
+    <Spinner
+        android:id="@+id/category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/user_category"
+        android:prompt="@string/category_prompt"
+        android:layout_above="@+id/Submit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="53dp" />
 
 </RelativeLayout>

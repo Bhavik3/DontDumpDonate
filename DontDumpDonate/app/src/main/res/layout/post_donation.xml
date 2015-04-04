@@ -10,7 +10,7 @@
 
     <EditText
         android:layout_width="357dp"
-        android:layout_height="190dp"
+        android:layout_height="150dp"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/DonationDetail"
@@ -22,6 +22,39 @@
         android:layout_height="wrap_content"
         android:text="Post Donation"
         android:id="@+id/postDonation"
-        android:layout_x="122dp"
-        android:layout_y="287dp" />
+        android:layout_x="129dp"
+        android:layout_y="346dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:id="@+id/textView23"
+        android:layout_x="6dp"
+        android:layout_y="190dp" />
+
+    <EditText
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/category"
+        android:layout_x="70dp"
+        android:layout_y="180dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity"
+        android:id="@+id/textView24"
+        android:layout_x="6dp"
+        android:layout_y="234dp" />
+
+    <EditText
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/quantity"
+        android:layout_x="72dp"
+        android:layout_y="223dp" />
+
 </AbsoluteLayout>
