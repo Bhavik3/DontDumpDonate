@@ -164,7 +164,7 @@ public class generalUserSignUp extends ActionBarActivity {
             params.add(new BasicNameValuePair("address", "\""+address+"\""));
             params.add(new BasicNameValuePair("pincode", pincode));
             params.add(new BasicNameValuePair("type", "\""+type+"\""));
-            jobj = clientServerInterface.makeHttpRequest("http://192.168.177.1/myfiles/insert_donor.php",params);
+            jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/insert_donor.php",params);
             try {
                 isAccess = jobj.getInt("success");
                 type = jobj.getString("type");

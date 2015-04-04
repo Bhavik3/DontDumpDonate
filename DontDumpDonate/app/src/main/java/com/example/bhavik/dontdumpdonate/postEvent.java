@@ -81,7 +81,7 @@ public class postEvent extends Fragment {
             params.add(new BasicNameValuePair("time", "\""+time.getText().toString()+"\""));
             params.add(new BasicNameValuePair("date", date.getText().toString()));
             params.add(new BasicNameValuePair("venue", "\""+Venue.getText().toString()+"\""));
-            jobj = clientServerInterface.makeHttpRequest("http://192.168.177.1/myfiles/post_event.php",params);
+            jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/post_event.php",params);
             return ab;
         }
 

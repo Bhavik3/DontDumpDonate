@@ -142,8 +142,10 @@ public class profile extends ActionBarActivity {
             Intent i = new Intent(this,MainActivity.class);
             startActivity(i);
             finish();
-        }else if(pos==0){
-            fragment = new viewProfile();
+        }else if(pos==0 && x==1) {
+            fragment = new viewDonorProfile();
+        }else if(pos==0 && x==2){
+            fragment = new  viewNGOProfile();
         }else if(pos==1 && x==1){
             fragment = new postDonation();
         }else if(pos==1 && x==2){
@@ -173,44 +175,6 @@ public class profile extends ActionBarActivity {
         }
 
     }
-
-//    private void ChangeFragment(int pos){
-//        if(pos==3){
-//            Intent i = new Intent(this,MainActivity.class);
-//            startActivity(i);
-//            finish();
-//        }else if(pos==0){
-//            android.support.v4.app.FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-//            viewProfile viewProfile = new viewProfile();
-//            tx.replace(R.id.content_frame,viewProfile.newInstance(profile.this));
-//            tx.commit();
-//        }else if(pos==1 && x==1){
-//            android.support.v4.app.FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-//            postDonation postDonation = new postDonation();
-//            tx.replace(R.id.content_frame,postDonation.newInstance(profile.this));
-//            tx.commit();
-//        }else if(pos==1 && x==2){
-//            android.support.v4.app.FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-//            postEvent postEvent = new postEvent();
-//            tx.replace(R.id.content_frame, postEvent.newInstance(profile.this));
-//            tx.commit();
-//        }else if(pos==2 && x==1){
-//            android.support.v4.app.FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-//            searchNGO searchNGO = new searchNGO();
-//            tx.replace(R.id.content_frame,searchNGO.newInstance(profile.this));
-//            tx.commit();
-//        }else if(pos==2 && x==2){
-//            android.support.v4.app.FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-//            viewDonation viewDonation = new viewDonation();
-//            tx.replace(R.id.content_frame,viewDonation.newInstance(profile.this));
-//            tx.commit();
-//        }
-//        else{
-//            Toast.makeText(this,"something went wrong..",Toast.LENGTH_LONG);
-//        }
-//
-//    }
-
 
     private String [] InitOption(int x){
         if(x==1){           //donors

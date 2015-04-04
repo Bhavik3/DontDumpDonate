@@ -87,7 +87,7 @@ public class postDonation extends Fragment{
             params.add(new BasicNameValuePair("category", "\""+Category.getText().toString()+"\""));
             params.add(new BasicNameValuePair("details", "\""+details.getText().toString()+"\""));
             params.add(new BasicNameValuePair("quantity", Quantity.getText().toString()));
-            jobj = clientServerInterface.makeHttpRequest("http://192.168.177.1/myfiles/post_donation.php",params);
+            jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/post_donation.php",params);
 
             return ab;
         }
