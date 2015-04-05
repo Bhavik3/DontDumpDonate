@@ -138,16 +138,17 @@ public class MainActivity extends ActionBarActivity {
 
             try {
                 isAccess = jobj.getInt("success");
-                ID = jobj.getInt("id");
-                type = jobj.getString("type");
+
 
                 if(isAccess==0){
                     jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/get_ngo_details.php",params);
                     isAccess = jobj.getInt("success");
                     ID = jobj.getInt("id");
                     type = jobj.getString("type");
+                }else {
+                    ID = jobj.getInt("id");
+                    type = jobj.getString("type");
                 }
-
                 System.out.println(isAccess);
             } catch (JSONException e) {
                 // TODO Auto-generated catch block

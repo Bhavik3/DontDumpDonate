@@ -50,8 +50,6 @@ public class viewDonorProfile extends Fragment{
             e.printStackTrace();
         }
 
-        String[] data1 = {"a","b"};
-
         ArrayAdapter<String> dataAdapter;
         if (isSuccess == 1){
             dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
