@@ -52,8 +52,13 @@ public class viewNGOProfile extends Fragment{
 
         ArrayAdapter<String> dataAdapter;
         if (isSuccess == 1){
-            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
-            list.setAdapter(dataAdapter);
+            customListAdapter adapter = new customListAdapter(getActivity().getApplicationContext(),R.layout.custom_list_item);
+            for(String x:data){
+                adapter.add(x);
+            }
+//            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
+//            list.setAdapter(dataAdapter);
+            list.setAdapter(adapter);
         }
 
         return v;

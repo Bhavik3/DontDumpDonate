@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -93,10 +92,15 @@ public class viewDonation extends Fragment{
             e.printStackTrace();
         }
 
-        ArrayAdapter<String> dataAdapter;
+//        ArrayAdapter<String> dataAdapter;
         if (isSuccess == 1){
-            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
-            donations.setAdapter(dataAdapter);
+            customListAdapter adapter = new customListAdapter(getActivity().getApplicationContext(),R.layout.custom_list_item);
+            for(String x:data){
+                adapter.add(x);
+            }
+//            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
+//            donations.setAdapter(dataAdapter);
+            donations.setAdapter(adapter);
         }
     }
 
@@ -121,10 +125,15 @@ public class viewDonation extends Fragment{
             e.printStackTrace();
         }
 
-        ArrayAdapter<String> dataAdapter;
+//        ArrayAdapter<String> dataAdapter;
         if (isSuccess == 1){
-            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
-            donations.setAdapter(dataAdapter);
+            customListAdapter adapter = new customListAdapter(getActivity().getApplicationContext(),R.layout.custom_list_item);
+            for(String x:data){
+                adapter.add(x);
+            }
+//            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
+//            donations.setAdapter(dataAdapter);
+            donations.setAdapter(adapter);
         }
 
     }

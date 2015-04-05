@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -93,10 +92,16 @@ public class searchNGO extends Fragment{
             e.printStackTrace();
         }
 
-        ArrayAdapter<String> dataAdapter;
+        customListAdapter adapter = new customListAdapter(getActivity().getApplicationContext(),R.layout.custom_list_item);
+        for(String x:data){
+            adapter.add(x);
+        }
+
+//        ArrayAdapter<String> dataAdapter;
         if (isSuccess == 1){
-            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
-            Result.setAdapter(dataAdapter);
+//            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
+//            Result.setAdapter(dataAdapter);
+            Result.setAdapter(adapter);
         }
     }
 
@@ -113,14 +118,21 @@ public class searchNGO extends Fragment{
             data[0] = "Name: "+NGO.getJSONObject(0).getString("name");
             data[1] = "Contact: "+NGO.getJSONObject(0).getString("contact");
             data[2] = "Address: "+NGO.getJSONObject(0).getString("address");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        ArrayAdapter<String> dataAdapter;
+        customListAdapter adapter = new customListAdapter(getActivity().getApplicationContext(),R.layout.custom_list_item);
+        for(String x:data){
+            adapter.add(x);
+        }
+
+//        ArrayAdapter<String> dataAdapter;
         if (isSuccess == 1){
-            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
-            Result.setAdapter(dataAdapter);
+//            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
+//            Result.setAdapter(dataAdapter);
+            Result.setAdapter(adapter);
         }
     }
 
