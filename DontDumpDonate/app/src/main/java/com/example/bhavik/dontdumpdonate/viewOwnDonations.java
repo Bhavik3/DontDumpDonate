@@ -23,42 +23,44 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Created by Bhavik on 03-04-2015.
+ * Created by Bhavik on 06-04-2015.
  */
-public class viewDonation extends Fragment{
-
-    ListView donations;
-    Button prev;
-    Button next;
-    Button Mark;
-    int DonationIndex =0;
-    int interestedDonationIndex;
-    private String [] data = new String[7];
-
-    private int isSuccess;
+public class viewOwnDonations extends Fragment{
 
     JSONObject jobj = null;
-    JSONArray donation ;
-    clientServerInterface clientServerInterface = new clientServerInterface();
     String ab;
 
+    int DonationIndex =0;
+    private String [] data = new String[6];
+    private int isSuccess;
+    JSONArray donation ;
+    clientServerInterface clientServerInterface = new clientServerInterface();
+
+    private int CollectedDonationIndex;
+
+    Button prev;
+    Button next;
+    Button mark;
+    ListView donations;
+
     public static android.support.v4.app.Fragment newInstance(Context context) {
-        viewDonation f = new viewDonation();
+        viewOwnDonations f = new viewOwnDonations();
         return f;
     }
 
-    @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.view_donation, container, false);
-        donations = (ListView)v.findViewById(R.id.Donations);
-        prev = (Button)v.findViewById(R.id.previous);
+        View v = inflater.inflate(R.layout.view_own_donations, container, false);
+        prev = (Button)v.findViewById(R.id.prev);
         next = (Button)v.findViewById(R.id.next);
-        Mark = (Button)v.findViewById(R.id.mark);
+        mark = (Button)v.findViewById(R.id.mark);
+
+        donations = (ListView)v.findViewById(R.id.ListOwnDonations);
+
         prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(DonationIndex==0)
-                    Toast.makeText(getActivity(),"No more previous donation.",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "No more previous donation.", Toast.LENGTH_LONG).show();
                 else {
                     DonationIndex--;
                     displayDonation(DonationIndex);
@@ -78,12 +80,12 @@ public class viewDonation extends Fragment{
             }
         });
 
-        Mark.setOnClickListener(new View.OnClickListener() {
+        mark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    interestedDonationIndex = Integer.parseInt(donation.getJSONObject(DonationIndex).getString("donation_id"));
-                    new MarkAsInteredsted().execute().get();
+                    CollectedDonationIndex = Integer.parseInt(donation.getJSONObject(DonationIndex).getString("donation_post_id"));
+                    new MarkAsCollected().execute().get();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
@@ -95,8 +97,10 @@ public class viewDonation extends Fragment{
         });
 
         ViewDonations();
+
         return v;
     }
+
 
     public void displayDonation(int index){
         try {
@@ -105,23 +109,23 @@ public class viewDonation extends Fragment{
             data[0] = "Details: "+donation.getJSONObject(index).getString("details");
             data[1] = "Category: "+donation.getJSONObject(index).getString("category");
             data[2] = "Quantity: "+donation.getJSONObject(index).getString("quantity");
-            data[5] = "Pin code: "+donation.getJSONObject(index).getString("pincode");
-            data[6] = "Contact: "+donation.getJSONObject(index).getString("contact");
+            if(donation.getJSONObject(index).getString("collected").equals("1"))
+                data[5] = "Collected: YES";
+            else
+                data[5] = "Collected: NO";
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-//        ArrayAdapter<String> dataAdapter;
         if (isSuccess == 1){
             customListAdapter adapter = new customListAdapter(getActivity().getApplicationContext(),R.layout.custom_list_item);
             for(String x:data){
                 adapter.add(x);
             }
-//            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
-//            donations.setAdapter(dataAdapter);
             donations.setAdapter(adapter);
         }
     }
+
 
     private void ViewDonations() {
         try{
@@ -132,26 +136,38 @@ public class viewDonation extends Fragment{
             e.printStackTrace();
         }
 
-        try {
-            data[3] = "Time: "+donation.getJSONObject(0).getString("time");
-            data[4] = "Date: "+donation.getJSONObject(0).getString("date");
-            data[0] = "Details: "+donation.getJSONObject(0).getString("details");
-            data[1] = "Category: "+donation.getJSONObject(0).getString("category");
-            data[2] = "Quantity: "+donation.getJSONObject(0).getString("quantity");
-            data[5] = "Pin code: "+donation.getJSONObject(0).getString("pincode");
-            data[6] = "Contact: "+donation.getJSONObject(0).getString("contact");
-        } catch (JSONException e) {
-            e.printStackTrace();
+        if(isSuccess==1) {
+            try {
+                data[3] = "Time: " + donation.getJSONObject(0).getString("time");
+                data[4] = "Date: " + donation.getJSONObject(0).getString("date");
+                data[0] = "Details: " + donation.getJSONObject(0).getString("details");
+                data[1] = "Category: " + donation.getJSONObject(0).getString("category");
+                data[2] = "Quantity: " + donation.getJSONObject(0).getString("quantity");
+                if (donation.getJSONObject(0).getString("collected").equals("1"))
+                    data[5] = "Collected: YES";
+                else
+                    data[5] = "Collected: NO";
+//            data[6] = "Contact: "+donation.getJSONObject(0).getString("contact");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }else{
+            getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                    try {
+                        Toast.makeText(getActivity(), jobj.getString("message"), Toast.LENGTH_SHORT).show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
 
-//        ArrayAdapter<String> dataAdapter;
         if (isSuccess == 1){
             customListAdapter adapter = new customListAdapter(getActivity().getApplicationContext(),R.layout.custom_list_item);
             for(String x:data){
                 adapter.add(x);
             }
-//            dataAdapter=new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, data);
-//            donations.setAdapter(dataAdapter);
             donations.setAdapter(adapter);
         }
 
@@ -165,7 +181,7 @@ public class viewDonation extends Fragment{
             // TODO Auto-generated method stub
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("id", profile.ID+""));
-            jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/display_donations.php",params);
+            jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/view_own_donations.php",params);
 
             try {
                 isSuccess = jobj.getInt("success");
@@ -173,7 +189,7 @@ public class viewDonation extends Fragment{
                     donation =  jobj.getJSONArray("donations");
                     System.out.println(donation.toString());
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "something went wrong, please try again..", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), jobj.getString("message"), Toast.LENGTH_LONG).show();
                 }
             }catch(JSONException e){
                 e.printStackTrace();
@@ -189,15 +205,16 @@ public class viewDonation extends Fragment{
 
     }
 
-    class MarkAsInteredsted extends AsyncTask<String,String,String> {
+
+    class MarkAsCollected extends AsyncTask<String,String,String> {
 
         @Override
         protected String doInBackground(String... arg0) {
             // TODO Auto-generated method stub
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("ngo_id", profile.ID+""));
-            params.add(new BasicNameValuePair("donation_post_id", interestedDonationIndex+""));
-            final JSONObject jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/mark_interested.php",params);
+            params.add(new BasicNameValuePair("donation_post_id",   CollectedDonationIndex+""));
+            final JSONObject jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/mark_as_collected.php",params);
 
             try {
                 isSuccess = jobj.getInt("success");
@@ -205,7 +222,7 @@ public class viewDonation extends Fragment{
                 if(isSuccess==1){
                     getActivity().runOnUiThread(new Runnable() {
                         public void run() {
-                            Toast.makeText(getActivity(), "Marked as interested", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Marked as Collected", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }else{
@@ -232,4 +249,5 @@ public class viewDonation extends Fragment{
         }
 
     }
+
 }

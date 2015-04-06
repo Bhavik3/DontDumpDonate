@@ -34,7 +34,7 @@ public class clientServerInterface {
 
     //this method returns json object.
     //JSONObject
-    public JSONObject makeHttpRequest(String url,List<NameValuePair> params) {
+    public static JSONObject makeHttpRequest(String url, List<NameValuePair> params) {
         //http client helps to send and receive data
         DefaultHttpClient httpclient = new DefaultHttpClient();
         //our request method is post

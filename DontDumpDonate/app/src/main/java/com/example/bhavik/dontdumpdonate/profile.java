@@ -69,13 +69,17 @@ public class profile extends ActionBarActivity {
 
         // adding nav drawer items to array
         // Home
-        navDrawerItems.add(new navDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
+        int temp=0;
+        for(String x :navMenuTitles) {
+            navDrawerItems.add(new navDrawerItem(navMenuTitles[temp], navMenuIcons.getResourceId(temp, -1)));
+            temp++;
+        }
         // Find People
-        navDrawerItems.add(new navDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+//        navDrawerItems.add(new navDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
         // Photos
-        navDrawerItems.add(new navDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
+//        navDrawerItems.add(new navDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
         // Communities, Will add a counter here
-        navDrawerItems.add(new navDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1), true, "22"));
+//        navDrawerItems.add(new navDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
 
         // Recycle the typed array
         navMenuIcons.recycle();
@@ -116,12 +120,6 @@ public class profile extends ActionBarActivity {
 
         mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
-//        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                ChangeFragment(x,position);
-//            }
-//        });
     }
 
     /**
@@ -138,7 +136,7 @@ public class profile extends ActionBarActivity {
     private void ChangeFragment(int pos){
         Fragment fragment = null;
 
-        if(pos==3){
+        if(pos==5){
             Intent i = new Intent(this,MainActivity.class);
             startActivity(i);
             finish();
@@ -150,10 +148,16 @@ public class profile extends ActionBarActivity {
             fragment = new postDonation();
         }else if(pos==1 && x==2){
             fragment = new postEvent();
-        }else if(pos==2 && x==1){
+        }else if((pos==2 && x==1) || (pos==3 && x==2)){
             fragment = new searchNGO();
         }else if(pos==2 && x==2){
             fragment = new viewDonation();
+        }else if(pos==3 && x==1){
+            fragment = new viewOwnDonations();
+        }else if(pos==4 && x==1){
+            fragment = new viewEvents();
+        }else if(pos==4 && x==2){
+            fragment = new viewOwnEvents();
         }
         else{
             Toast.makeText(this,"something went wrong..",Toast.LENGTH_LONG);
@@ -178,10 +182,10 @@ public class profile extends ActionBarActivity {
 
     private String [] InitOption(int x){
         if(x==1){           //donors
-            String [] options = {"View Profile","Post Donation","Search NGO","Log Out"};
+            String [] options = {"View Profile","Post Donation","View NGOs","My Posts","View Events","Log Out"};         //view events
             return options;
         }else if(x==2){         //NGO
-            String [] options = {"View Profile","Post an Event","View Donation","Log Out"};
+            String [] options = {"View Profile","Post an Event","View Donation","View NGOs","View Own Events","Log Out"};    //view own events
             return options;
         }
         return null;
