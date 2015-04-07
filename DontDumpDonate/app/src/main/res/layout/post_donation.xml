@@ -6,6 +6,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Details about donation"
+        android:textSize="22dp"
         android:id="@+id/textView21" />
 
     <EditText

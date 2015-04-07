@@ -2,7 +2,6 @@ package com.example.bhavik.dontdumpdonate;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -11,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -24,7 +22,6 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    RelativeLayout background;
     Button signIn;
     Button ForgetPassword;
     Button signUp;
@@ -44,8 +41,6 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        background = (RelativeLayout) findViewById(R.id.SignIn);
-        background.setBackgroundColor(Color.parseColor("#bcc6cc"));
 
         signIn = (Button)findViewById(R.id.button);
         username = (EditText)findViewById(R.id.username);

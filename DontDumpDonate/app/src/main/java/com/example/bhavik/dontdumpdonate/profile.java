@@ -68,18 +68,11 @@ public class profile extends ActionBarActivity {
         navDrawerItems = new ArrayList<navDrawerItem>();
 
         // adding nav drawer items to array
-        // Home
         int temp=0;
         for(String x :navMenuTitles) {
             navDrawerItems.add(new navDrawerItem(navMenuTitles[temp], navMenuIcons.getResourceId(temp, -1)));
             temp++;
         }
-        // Find People
-//        navDrawerItems.add(new navDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
-        // Photos
-//        navDrawerItems.add(new navDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
-        // Communities, Will add a counter here
-//        navDrawerItems.add(new navDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
 
         // Recycle the typed array
         navMenuIcons.recycle();
@@ -120,6 +113,53 @@ public class profile extends ActionBarActivity {
 
         mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
+
+        if(x==1){
+            Fragment fragment = new postDonation();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, fragment).commit();
+            mDrawerList.setItemChecked(1, true);
+            mDrawerList.setSelection(1);
+            setTitle(navMenuTitles[1]);
+            mDrawerLayout.closeDrawer(mDrawerList);
+        }else if(x==2){
+            Fragment fragment = new postEvent();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, fragment).commit();
+            mDrawerList.setItemChecked(1, true);
+            mDrawerList.setSelection(1);
+            setTitle(navMenuTitles[1]);
+            mDrawerLayout.closeDrawer(mDrawerList);
+        }
+
+    }
+
+    public void ChangeFragmentToOwnDonations(){
+        Fragment fragment = new viewOwnDonations();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, fragment).commit();
+
+        // update selected item and title, then close the drawer
+        mDrawerList.setItemChecked(3, true);
+        mDrawerList.setSelection(3);
+        setTitle(navMenuTitles[3]);
+        mDrawerLayout.closeDrawer(mDrawerList);
+    }
+
+    public void ChangeFragmentToOwnEvents(){
+        Fragment fragment = new viewOwnEvents();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, fragment).commit();
+
+        // update selected item and title, then close the drawer
+        mDrawerList.setItemChecked(4, true);
+        mDrawerList.setSelection(4);
+        setTitle(navMenuTitles[4]);
+        mDrawerLayout.closeDrawer(mDrawerList);
     }
 
     /**

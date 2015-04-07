@@ -4,11 +4,14 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
@@ -19,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 
 /**
@@ -30,6 +34,10 @@ public class postDonation extends Fragment{
     EditText details;
     EditText Category;
     EditText Quantity;
+
+    static DrawerLayout mDrawerLayout;
+    static ListView mDrawerList;
+    static String[] navMenuTitles;
 
     JSONObject jobj = null;
     clientServerInterface clientServerInterface = new clientServerInterface();
@@ -72,7 +80,22 @@ public class postDonation extends Fragment{
             return;
         }
 
-        new RetreiveData().execute();
+        try {
+            new RetreiveData().execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Fragment fragment = new postEvent();
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, fragment).commit();
+        mDrawerList.setItemChecked(3, true);
+        mDrawerList.setSelection(3);
+//        setTitle(navMenuTitles[1]);
+        mDrawerLayout.closeDrawer(mDrawerList);
+
     }
 
     class RetreiveData extends AsyncTask<String,String,String> {

@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:text="  next  "
         android:id="@+id/next"
+        android:background="#3E9C40"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
