@@ -1,22 +1,29 @@
 
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Details about donation"
-        android:textSize="22dp"
+        android:textSize="19dp"
         android:id="@+id/textView21" />
 
     <EditText
-        android:layout_width="357dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/DonationDetail"
         android:layout_x="16dp"
-        android:layout_y="25dp" />
+        android:layout_y="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView21"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/category" />
 
     <Button
         android:layout_width="wrap_content"
@@ -24,30 +31,49 @@
         android:text="Post Donation"
         android:id="@+id/postDonation"
         android:layout_x="129dp"
-        android:layout_y="346dp" />
+        android:layout_y="346dp"
+        android:layout_below="@+id/quantity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Category"
-        android:id="@+id/textView23"
-        android:layout_x="6dp"
-        android:layout_y="190dp" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Category"-->
+        <!--android:id="@+id/textView23"-->
+        <!--android:layout_x="6dp"-->
+        <!--android:layout_y="190dp" />-->
 
     <EditText
         android:layout_width="287dp"
         android:layout_height="wrap_content"
         android:id="@+id/category"
         android:layout_x="70dp"
-        android:layout_y="180dp" />
+        android:layout_y="180dp"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quantity"
-        android:id="@+id/textView24"
-        android:layout_x="6dp"
-        android:layout_y="234dp" />
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:hint="Category"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Quantity"-->
+        <!--android:id="@+id/textView24"-->
+        <!--android:layout_x="6dp"-->
+        <!--android:layout_y="234dp" />-->
 
     <EditText
         android:layout_width="285dp"
@@ -56,6 +82,19 @@
         android:ems="10"
         android:id="@+id/quantity"
         android:layout_x="72dp"
-        android:layout_y="223dp" />
+        android:layout_y="223dp"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:hint="Quantity"
+        android:singleLine="true"
+        android:layout_below="@+id/category"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-</AbsoluteLayout>
+</RelativeLayout>

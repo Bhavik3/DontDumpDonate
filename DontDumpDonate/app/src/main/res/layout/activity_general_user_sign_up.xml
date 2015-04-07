@@ -1,3 +1,10 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    >
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -7,86 +14,25 @@
     tools:context="com.example.bhavik.dontdumpdonate.GeneralUser_signUp"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Name"
-        android:id="@+id/textView12"
-        android:layout_alignBottom="@+id/UserName"
-        android:layout_alignRight="@+id/textView13"
-        android:layout_alignEnd="@+id/textView13" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:id="@+id/textView13"
-        android:layout_alignBottom="@+id/Password"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Person Name"
-        android:id="@+id/textView14"
-        android:layout_alignBottom="@+id/PersonName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age"
-        android:id="@+id/textView15"
-        android:layout_alignBottom="@+id/Age"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contact No"
-        android:id="@+id/textView16"
-        android:layout_alignBottom="@+id/ContactNo"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email Address"
-        android:id="@+id/textView17"
-        android:layout_alignBottom="@+id/EmailAddress"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Residential Address"
-        android:id="@+id/textView18"
-        android:layout_alignBottom="@+id/ResAddress"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pin Code"
-        android:id="@+id/textView19"
-        android:layout_alignBottom="@+id/PinCode"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/UserName"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textView18"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:hint="User Name"
+        android:singleLine="true"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -98,7 +44,14 @@
         android:layout_alignLeft="@+id/UserName"
         android:layout_alignStart="@+id/UserName"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:hint="Password"
+        android:singleLine="true"
+        android:layout_marginBottom="10dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -108,7 +61,14 @@
         android:layout_alignLeft="@+id/Password"
         android:layout_alignStart="@+id/Password"
         android:layout_alignRight="@+id/Password"
-        android:layout_alignEnd="@+id/Password" />
+        android:layout_alignEnd="@+id/Password"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:hint="Person Name"
+        android:singleLine="true"
+        android:layout_marginBottom="10dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -120,7 +80,14 @@
         android:layout_alignLeft="@+id/PersonName"
         android:layout_alignStart="@+id/PersonName"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:hint="Age"
+        android:singleLine="true"
+        android:layout_marginBottom="10dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -129,9 +96,17 @@
         android:ems="10"
         android:id="@+id/ContactNo"
         android:layout_below="@+id/Age"
-        android:layout_toRightOf="@+id/textView18"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:hint="Contact No"
+        android:singleLine="true"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -141,7 +116,14 @@
         android:layout_alignLeft="@+id/ContactNo"
         android:layout_alignStart="@+id/ContactNo"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:hint="Email Address"
+        android:singleLine="true"
+        android:layout_marginBottom="10dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -149,11 +131,17 @@
         android:inputType="textPostalAddress"
         android:ems="10"
         android:id="@+id/ResAddress"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:hint="Residential Address"
+        android:singleLine="true"
         android:layout_below="@+id/EmailAddress"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/EmailAddress"
-        android:layout_alignStart="@+id/EmailAddress" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -161,18 +149,19 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/PinCode"
-        android:layout_below="@+id/textView18"
-        android:layout_toRightOf="@+id/textView18"
-        android:layout_toEndOf="@+id/textView18" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/Submit"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/PinCode"
-        android:layout_alignStart="@+id/PinCode" />
+        android:layout_below="@+id/ResAddress"
+        android:textColor="#222222"
+        android:textColorHint="#999999"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:hint="Pin Code"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignRight="@+id/ResAddress"
+        android:layout_alignEnd="@+id/ResAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:id="@+id/category"
@@ -180,8 +169,25 @@
         android:layout_height="wrap_content"
         android:entries="@array/user_category"
         android:prompt="@string/category_prompt"
-        android:layout_above="@+id/Submit"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="53dp" />
+        android:layout_below="@+id/PinCode"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/Submit"
+        android:layout_below="@+id/category"
+        android:layout_centerHorizontal="true" />
+
+
+
+
 
 </RelativeLayout>
+</ScrollView>
