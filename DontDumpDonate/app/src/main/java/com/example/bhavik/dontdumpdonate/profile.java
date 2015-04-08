@@ -186,6 +186,16 @@ public class profile extends ActionBarActivity {
             fragment = new  viewNGOProfile();
         }else if(pos==1 && x==1){
             fragment = new postDonation();
+//            fragment1.setProfile();
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            fragmentManager.beginTransaction()
+//                    .replace(R.id.content_frame, fragment1).commit();
+//
+//            // update selected item and title, then close the drawer
+//            mDrawerList.setItemChecked(pos, true);
+//            mDrawerList.setSelection(pos);
+//            setTitle(navMenuTitles[pos]);
+//            mDrawerLayout.closeDrawer(mDrawerList);
         }else if(pos==1 && x==2){
             fragment = new postEvent();
         }else if((pos==2 && x==1) || (pos==3 && x==2)){

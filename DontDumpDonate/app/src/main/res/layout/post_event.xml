@@ -1,5 +1,6 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#dddddd"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
@@ -10,24 +11,23 @@
         android:id="@+id/textView21" />
 
     <EditText
-        android:layout_width="357dp"
-        android:layout_height="190dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/EventDetail"
-        android:layout_x="16dp"
-        android:layout_y="25dp"
         android:layout_below="@+id/textView21"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/venue" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Post Donation"
         android:id="@+id/postEvent"
-        android:layout_x="134dp"
-        android:layout_y="336dp"
         android:layout_below="@+id/date"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -44,22 +44,22 @@
         <!--android:layout_y="231dp" />-->
 
     <EditText
-        android:layout_width="261dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/venue"
-        android:layout_x="109dp"
-        android:layout_y="216dp"
         android:textColor="#222222"
         android:textColorHint="#999999"
         android:background="#FFFFFF"
         android:padding="10dp"
         android:hint="Venue"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:singleLine="true"
-        android:layout_below="@+id/EventDetail"
+        android:layout_above="@+id/time"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/EventDetail"
-        android:layout_alignEnd="@+id/EventDetail" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -70,23 +70,20 @@
         <!--android:layout_y="270dp" />-->
 
     <EditText
-        android:layout_width="267dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/time"
-        android:layout_x="109dp"
-        android:layout_y="257dp"
         android:textColor="#222222"
         android:textColorHint="#999999"
         android:background="#FFFFFF"
-        android:padding="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:padding="10dp"
         android:hint="Time (HH:MM)"
         android:singleLine="true"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/date"
-        android:layout_alignEnd="@+id/date" />
+        android:layout_alignParentStart="true" />
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -97,12 +94,12 @@
         <!--android:layout_y="313dp" />-->
 
     <EditText
-        android:layout_width="265dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/date"
-        android:layout_x="111dp"
-        android:layout_y="296dp"
         android:textColor="#222222"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:textColorHint="#999999"
         android:background="#FFFFFF"
         android:padding="10dp"

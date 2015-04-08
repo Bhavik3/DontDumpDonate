@@ -43,6 +43,12 @@ public class viewOwnDonations extends Fragment{
     Button mark;
     ListView donations;
 
+    private static profile Profile;
+
+    public static void setProfile(profile p){
+        Profile = p;
+    }
+
     public static android.support.v4.app.Fragment newInstance(Context context) {
         viewOwnDonations f = new viewOwnDonations();
         return f;
@@ -53,7 +59,7 @@ public class viewOwnDonations extends Fragment{
         prev = (Button)v.findViewById(R.id.prev);
         next = (Button)v.findViewById(R.id.next);
         mark = (Button)v.findViewById(R.id.mark);
-
+        ((profile)getActivity()).getSupportActionBar().setTitle("My Posts");
         donations = (ListView)v.findViewById(R.id.ListOwnDonations);
 
         prev.setOnClickListener(new View.OnClickListener() {

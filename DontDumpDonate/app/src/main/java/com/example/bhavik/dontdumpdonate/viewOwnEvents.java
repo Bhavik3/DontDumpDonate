@@ -50,6 +50,8 @@ public class viewOwnEvents extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.view_events, container, false);
 
+        ((profile)getActivity()).getSupportActionBar().setTitle("View Own Events");
+
         prev = (Button)v.findViewById(R.id.prev);
         next = (Button)v.findViewById(R.id.next);
 

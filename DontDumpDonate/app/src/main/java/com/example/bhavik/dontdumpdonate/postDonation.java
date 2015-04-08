@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +34,7 @@ public class postDonation extends Fragment{
     EditText Category;
     EditText Quantity;
 
+    private  profile Profile;
     static DrawerLayout mDrawerLayout;
     static ListView mDrawerList;
     static String[] navMenuTitles;
@@ -45,6 +45,10 @@ public class postDonation extends Fragment{
 
     String date;
     String time;
+
+    public void setProfile(profile p){
+        this.Profile = p;
+    }
 
     public static android.support.v4.app.Fragment newInstance(Context context) {
         postDonation f = new postDonation();
@@ -87,14 +91,17 @@ public class postDonation extends Fragment{
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        Fragment fragment = new postEvent();
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, fragment).commit();
-        mDrawerList.setItemChecked(3, true);
-        mDrawerList.setSelection(3);
-//        setTitle(navMenuTitles[1]);
-        mDrawerLayout.closeDrawer(mDrawerList);
+        viewOwnDonations vDonation = new viewOwnDonations();
+        this.getFragmentManager().beginTransaction().replace(R.id.content_frame,vDonation).addToBackStack(null).commit();
+
+//        Fragment fragment = new postEvent();
+//        FragmentManager fragmentManager = getFragmentManager();
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.content_frame, fragment).commit();
+//        mDrawerList.setItemChecked(3, true);
+//        mDrawerList.setSelection(3);
+////        setTitle(navMenuTitles[1]);
+//        mDrawerLayout.closeDrawer(mDrawerList);
 
     }
 
@@ -121,6 +128,7 @@ public class postDonation extends Fragment{
                         Toast.makeText(getActivity(), "Donation posted ...", Toast.LENGTH_SHORT).show();
                 }
             });
+
 //            Toast.makeText(getActivity().getApplicationContext(), "Donation posted ...", Toast.LENGTH_LONG).show();
         }
 

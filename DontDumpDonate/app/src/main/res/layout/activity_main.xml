@@ -79,7 +79,7 @@
         <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Forgot your password! Click here"
+        android:text="Forgot your password?"
         android:layout_marginTop="40dp"
         android:background="@null"
         android:id="@+id/button2"
@@ -90,7 +90,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Wanna Sign up? Click here"
+            android:text="New User?"
             android:layout_marginTop="10dp"
             android:background="@null"
             android:id="@+id/singUp"

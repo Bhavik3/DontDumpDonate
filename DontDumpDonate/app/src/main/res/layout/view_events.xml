@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#dddddd"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <Button
@@ -9,7 +10,9 @@
         android:id="@+id/prev"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#3E9C40"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -18,7 +21,9 @@
         android:id="@+id/next"
         android:layout_alignTop="@+id/prev"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="#3E9C40"
+        android:textAllCaps="false"/>
 
     <ListView
         android:layout_width="wrap_content"

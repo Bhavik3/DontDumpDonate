@@ -17,6 +17,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by Bhavik on 02-04-2015.
@@ -67,7 +68,16 @@ public class postEvent extends Fragment {
             Toast.makeText(getActivity().getApplicationContext(), "please fill all the details..", Toast.LENGTH_LONG).show();
             return;
         }
-        new RetreiveData().execute();
+        try {
+            new RetreiveData().execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        viewOwnEvents vDonation = new viewOwnEvents();
+        this.getFragmentManager().beginTransaction().replace(R.id.content_frame,vDonation).addToBackStack(null).commit();
+
     }
 
     class RetreiveData extends AsyncTask<String,String,String> {
