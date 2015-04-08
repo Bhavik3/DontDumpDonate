@@ -86,7 +86,11 @@ public class postEvent extends Fragment {
         }
 
         protected void onPostExecute(String ab){
-            Toast.makeText(getActivity().getApplicationContext(), "Event posted ...", Toast.LENGTH_LONG).show();
+            getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                        Toast.makeText(getActivity(),"Event posted ...", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
 
     }

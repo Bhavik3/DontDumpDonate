@@ -71,7 +71,7 @@ public class viewOwnDonations extends Fragment{
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(DonationIndex==donation.length()-1)
+                if(donation.length()==0 || DonationIndex==donation.length()-1)
                     Toast.makeText(getActivity(),"No more next donation.",Toast.LENGTH_LONG).show();
                 else {
                     DonationIndex++;
@@ -189,7 +189,17 @@ public class viewOwnDonations extends Fragment{
                     donation =  jobj.getJSONArray("donations");
                     System.out.println(donation.toString());
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), jobj.getString("message"), Toast.LENGTH_LONG).show();
+                    getActivity().runOnUiThread(new Runnable() {
+                        public void run() {
+                            try {
+                                Toast.makeText(getActivity(), jobj.getString("message"), Toast.LENGTH_SHORT).show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    donation = new JSONArray();
+//                    Toast.makeText(getActivity().getApplicationContext(), jobj.getString("message"), Toast.LENGTH_LONG).show();
                 }
             }catch(JSONException e){
                 e.printStackTrace();

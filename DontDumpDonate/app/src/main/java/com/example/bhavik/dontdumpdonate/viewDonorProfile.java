@@ -84,7 +84,12 @@ public class viewDonorProfile extends Fragment{
                     data[4] = "Residential Address: "+jobj.getString("address");
                     data[5] = "Pin Code: "+jobj.getString("pincode");
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "something went wrong, please try again..", Toast.LENGTH_LONG).show();
+                    getActivity().runOnUiThread(new Runnable() {
+                        public void run() {
+                                Toast.makeText(getActivity(), "something went wrong, please try again..", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
                 }
             }catch(JSONException e){
                 e.printStackTrace();

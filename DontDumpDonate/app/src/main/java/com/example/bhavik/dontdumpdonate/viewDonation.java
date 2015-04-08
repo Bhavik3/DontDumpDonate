@@ -173,7 +173,12 @@ public class viewDonation extends Fragment{
                     donation =  jobj.getJSONArray("donations");
                     System.out.println(donation.toString());
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "something went wrong, please try again..", Toast.LENGTH_LONG).show();
+                    getActivity().runOnUiThread(new Runnable() {
+                        public void run() {
+                                Toast.makeText(getActivity(), "something went wrong, please try again..", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+//                    Toast.makeText(getActivity().getApplicationContext(), "something went wrong, please try again..", Toast.LENGTH_LONG).show();
                 }
             }catch(JSONException e){
                 e.printStackTrace();

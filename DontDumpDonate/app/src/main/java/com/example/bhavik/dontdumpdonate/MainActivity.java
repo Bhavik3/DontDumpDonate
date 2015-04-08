@@ -85,12 +85,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void ForgetPassword(String username){
-        if(username.equals(""))
-            new AlertDialog.Builder(this).setMessage("Username is missing.").show();
-        else{
+//        if(username.equals(""))
+//            new AlertDialog.Builder(this).setMessage("Username is missing.").show();
+//        else{
             Intent i = new Intent(this,forgotPassword.class);
             startActivity(i);
-        }
+//        }
 
     }
 
@@ -124,10 +124,10 @@ public class MainActivity extends ActionBarActivity {
         protected String doInBackground(String... arg0) {
             // TODO Auto-generated method stub
             String userName = "\""+username.getText().toString()+"\"";
-            String passWord = "\""+password.getText().toString()+"\"";
+            String passWord = password.getText().toString();
 
             List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("username", userName));
+            params.add(new BasicNameValuePair("email", userName));
             params.add(new BasicNameValuePair("password", passWord));
             jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/get_donor_details.php",params);
 
@@ -168,7 +168,6 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(i);
                 finish();
             }else{
-
                 new AlertDialog.Builder(MainActivity.this).setMessage("Username or password is wrong!!").show();
             }
         }

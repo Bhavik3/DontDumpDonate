@@ -70,7 +70,7 @@ public class viewOwnEvents extends Fragment{
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(EventIndex==eventsJson.length()-1)
+                if(eventsJson.length()==0 || EventIndex==eventsJson.length()-1)
                     Toast.makeText(getActivity(),"No more next events.",Toast.LENGTH_LONG).show();
                 else {
                     EventIndex++;
@@ -172,6 +172,7 @@ public class viewOwnEvents extends Fragment{
                             }
                         }
                     });
+                    eventsJson = new JSONArray();
                 }
             }catch(JSONException e){
                 e.printStackTrace();

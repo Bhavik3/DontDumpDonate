@@ -116,7 +116,12 @@ public class postDonation extends Fragment{
         }
 
         protected void onPostExecute(String ab){
-            Toast.makeText(getActivity().getApplicationContext(), "Donation posted ...", Toast.LENGTH_LONG).show();
+            getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                        Toast.makeText(getActivity(), "Donation posted ...", Toast.LENGTH_SHORT).show();
+                }
+            });
+//            Toast.makeText(getActivity().getApplicationContext(), "Donation posted ...", Toast.LENGTH_LONG).show();
         }
 
     }

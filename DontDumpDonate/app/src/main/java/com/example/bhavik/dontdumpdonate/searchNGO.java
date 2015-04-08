@@ -151,7 +151,15 @@ public class searchNGO extends Fragment{
                     NGO =  jobj.getJSONArray("ngos");
                     System.out.println(NGO.toString());
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "something went wrong, please try again..", Toast.LENGTH_LONG).show();
+                    getActivity().runOnUiThread(new Runnable() {
+                        public void run() {
+                            try {
+                                Toast.makeText(getActivity(), jobj.getString("something went wrong, please try again.."), Toast.LENGTH_SHORT).show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
                 }
             }catch(JSONException e){
                 e.printStackTrace();

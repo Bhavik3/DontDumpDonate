@@ -156,7 +156,7 @@ public class generalUserSignUp extends ActionBarActivity {
 
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("username", "\""+username+"\""));
-            params.add(new BasicNameValuePair("password", "\""+password+"\""));
+            params.add(new BasicNameValuePair("password", password));
             params.add(new BasicNameValuePair("name", "\""+name+"\""));
             params.add(new BasicNameValuePair("age", age));
             params.add(new BasicNameValuePair("contact", contact));

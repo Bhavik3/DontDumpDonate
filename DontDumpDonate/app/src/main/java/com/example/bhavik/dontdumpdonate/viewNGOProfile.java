@@ -87,7 +87,15 @@ public class viewNGOProfile extends Fragment{
                     data[7] = "City: "+jobj.getString("city");
                     data[8] = "Pin Code: "+jobj.getString("pincode");
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), "something went wrong, please try again..", Toast.LENGTH_LONG).show();
+                    getActivity().runOnUiThread(new Runnable() {
+                        public void run() {
+                            try {
+                                Toast.makeText(getActivity(), jobj.getString("something went wrong, please try again.."), Toast.LENGTH_SHORT).show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
                 }
             }catch(JSONException e){
                 e.printStackTrace();
