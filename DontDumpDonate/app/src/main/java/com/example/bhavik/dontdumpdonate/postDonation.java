@@ -30,6 +30,7 @@ import java.util.concurrent.ExecutionException;
 public class postDonation extends Fragment{
 
     Button post;
+    EditText Address;
     EditText details;
     EditText Category;
     EditText Quantity;
@@ -61,6 +62,7 @@ public class postDonation extends Fragment{
         details = (EditText)v.findViewById(R.id.DonationDetail);
         Category = (EditText)v.findViewById(R.id.category);
         Quantity = (EditText)v.findViewById(R.id.quantity);
+        Address = (EditText)v.findViewById(R.id.address);
 
         post.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,11 +77,12 @@ public class postDonation extends Fragment{
         //need to update server data base here....
         date = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
         time = new SimpleDateFormat("HH:mm").format(Calendar.getInstance().getTime());
-        if(details.equals("") || Category.equals("") || Quantity.equals("")) {
+        if(details.equals("") || Category.equals("") || Quantity.equals("") || Address.equals("")) {
             Toast.makeText(getActivity().getApplicationContext(), "please fill all the details..", Toast.LENGTH_LONG).show();
             return;
         }
-        if(details.getText().toString().equals("") || Category.getText().toString().equals("") || Quantity.getText().toString().equals("")) {
+        if(details.getText().toString().equals("") || Category.getText().toString().equals("") || Quantity.getText().toString().equals("") ||
+                Address.getText().toString().equals("")) {
             Toast.makeText(getActivity().getApplicationContext(), "please fill all the details..", Toast.LENGTH_LONG).show();
             return;
         }
@@ -117,6 +120,7 @@ public class postDonation extends Fragment{
             params.add(new BasicNameValuePair("category", "\""+Category.getText().toString()+"\""));
             params.add(new BasicNameValuePair("details", "\""+details.getText().toString()+"\""));
             params.add(new BasicNameValuePair("quantity", Quantity.getText().toString()));
+            params.add(new BasicNameValuePair("address","\""+Address.getText().toString()+"\""));
             jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/post_donation.php",params);
 
             return ab;

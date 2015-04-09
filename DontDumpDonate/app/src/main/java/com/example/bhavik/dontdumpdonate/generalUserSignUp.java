@@ -120,6 +120,26 @@ public class generalUserSignUp extends ActionBarActivity {
             return;
         }
 
+        if(password.length()<8){
+            Toast.makeText(this,"Password should be at least 8 characters long.",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(pincode.length()!=6){
+            Toast.makeText(this,"Pin code should be 8 characters long.",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(age.length()>=3){
+            Toast.makeText(this,"Please enter valid Age!",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(!email.contains("@")){
+            Toast.makeText(this,"Please enter valid Email Address.",Toast.LENGTH_LONG).show();
+            return;
+        }
+
         new RetreiveData().execute();
     }
 

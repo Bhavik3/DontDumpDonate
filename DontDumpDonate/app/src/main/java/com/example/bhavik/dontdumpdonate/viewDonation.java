@@ -165,7 +165,7 @@ public class viewDonation extends Fragment{
             // TODO Auto-generated method stub
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("id", profile.ID+""));
-            System.out.println("ID==>"+profile.ID);
+//            System.out.println("ID==>"+profile.ID);
             jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/display_donations.php",params);
 
             try {

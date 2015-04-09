@@ -235,7 +235,7 @@ public class profile extends ActionBarActivity {
             String [] options = {"View Profile","Post Donation","View NGOs","My Posts","View Events","Log Out"};         //view events
             return options;
         }else if(x==2){         //NGO
-            String [] options = {"View Profile","Post an Event","View Donation","View NGOs","View Own Events","Log Out"};    //view own events
+            String [] options = {"View Profile","Post an Event","View Donations","View NGOs","My Events","Log Out"};    //view own events
             return options;
         }
         return null;

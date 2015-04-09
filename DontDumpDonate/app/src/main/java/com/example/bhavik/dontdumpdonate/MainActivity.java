@@ -134,7 +134,6 @@ public class MainActivity extends ActionBarActivity {
             try {
                 isAccess = jobj.getInt("success");
 
-
                 if(isAccess==0){
                     jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/get_ngo_details.php",params);
                     isAccess = jobj.getInt("success");
