@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -134,6 +135,7 @@ public class viewEvents extends Fragment{
                     }
                 }
             });
+
         }
 
         if (isSuccess == 1){
@@ -152,7 +154,7 @@ public class viewEvents extends Fragment{
         protected String doInBackground(String... arg0) {
             // TODO Auto-generated method stub
             List<NameValuePair> params = new ArrayList<NameValuePair>();
-//            params.add(new BasicNameValuePair("id", profile.ID+""));
+            params.add(new BasicNameValuePair("id", profile.ID+""));
             jobj = clientServerInterface.makeHttpRequest("http://dontdumpdonate.byethost7.com/display_events.php",params);
 
             try {
@@ -161,7 +163,18 @@ public class viewEvents extends Fragment{
                     eventsJson =  jobj.getJSONArray("events");
                     System.out.println(eventsJson.toString());
                 }else{
-                    Toast.makeText(getActivity().getApplicationContext(), jobj.getString("message"), Toast.LENGTH_LONG).show();
+                    eventsJson = new JSONArray();
+                    getActivity().runOnUiThread(new Runnable() {
+                        public void run() {
+                            try {
+                                Toast.makeText(getActivity().getApplicationContext(), jobj.getString("message"), Toast.LENGTH_LONG).show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+
+
                 }
             }catch(JSONException e){
                 e.printStackTrace();

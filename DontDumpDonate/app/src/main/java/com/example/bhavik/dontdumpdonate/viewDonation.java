@@ -132,18 +132,19 @@ public class viewDonation extends Fragment{
             e.printStackTrace();
         }
 
-        try {
-            data[3] = "Time: "+donation.getJSONObject(0).getString("time");
-            data[4] = "Date: "+donation.getJSONObject(0).getString("date");
-            data[0] = "Details: "+donation.getJSONObject(0).getString("details");
-            data[1] = "Category: "+donation.getJSONObject(0).getString("category");
-            data[2] = "Quantity: "+donation.getJSONObject(0).getString("quantity");
-            data[5] = "Pin code: "+donation.getJSONObject(0).getString("pincode");
-            data[6] = "Contact: "+donation.getJSONObject(0).getString("contact");
-        } catch (JSONException e) {
-            e.printStackTrace();
+        if(!(donation.length()==0)) {
+            try {
+                data[3] = "Time: " + donation.getJSONObject(0).getString("time");
+                data[4] = "Date: " + donation.getJSONObject(0).getString("date");
+                data[0] = "Details: " + donation.getJSONObject(0).getString("details");
+                data[1] = "Category: " + donation.getJSONObject(0).getString("category");
+                data[2] = "Quantity: " + donation.getJSONObject(0).getString("quantity");
+                data[5] = "Pin code: " + donation.getJSONObject(0).getString("pincode");
+                data[6] = "Contact: " + donation.getJSONObject(0).getString("contact");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
-
 //        ArrayAdapter<String> dataAdapter;
         if (isSuccess == 1){
             customListAdapter adapter = new customListAdapter(getActivity().getApplicationContext(),R.layout.custom_list_item);
@@ -175,9 +176,14 @@ public class viewDonation extends Fragment{
                     donation =  jobj.getJSONArray("donations");
                     System.out.println(donation.toString());
                 }else{
+                    donation = new JSONArray();
                     getActivity().runOnUiThread(new Runnable() {
                         public void run() {
-                                Toast.makeText(getActivity(), "something went wrong, please try again..", Toast.LENGTH_SHORT).show();
+                            try {
+                                Toast.makeText(getActivity(), jobj.getString("message"), Toast.LENGTH_SHORT).show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
                     });
 //                    Toast.makeText(getActivity().getApplicationContext(), "something went wrong, please try again..", Toast.LENGTH_LONG).show();

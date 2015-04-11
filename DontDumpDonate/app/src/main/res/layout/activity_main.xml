@@ -17,7 +17,8 @@
         android:paddingLeft="20dp"
         android:padding="15dp"
         android:paddingRight="20dp"
-        android:background="#000000">
+        android:background="#000000"
+        android:id="@+id/linearLayout">
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -107,5 +108,32 @@
         <!--android:layout_centerHorizontal="true" />-->
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:background="@android:color/transparent"
+        android:id="@+id/About_us"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FAQ"
+        android:background="@android:color/transparent"
+        android:id="@+id/FAQ"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="17dp"
+        android:stateListAnimator="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout" />
 
 </RelativeLayout>

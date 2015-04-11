@@ -25,6 +25,8 @@ public class MainActivity extends ActionBarActivity {
     Button signIn;
     Button ForgetPassword;
     Button signUp;
+    Button FAQ;
+    Button AboutUs;
     EditText username;
     EditText password;
 
@@ -47,6 +49,8 @@ public class MainActivity extends ActionBarActivity {
         password = (EditText)findViewById(R.id.password);
         ForgetPassword = (Button)findViewById(R.id.button2);
         signUp = (Button)findViewById(R.id.singUp);
+        AboutUs = (Button)findViewById(R.id.About_us);
+        FAQ = (Button)findViewById(R.id.FAQ);
 
         signIn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -66,6 +70,32 @@ public class MainActivity extends ActionBarActivity {
                 ForgetPassword(username.getText().toString());
             }
         });
+
+        AboutUs.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                aboutUs();
+            }
+        });
+
+        FAQ.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Faq();
+            }
+        });
+    }
+
+    private void Faq(){
+        Intent i = new Intent(this,Faq.class);
+        startActivity(i);
+    }
+
+    private void aboutUs(){
+        Intent i = new Intent(this,aboutUs.class);
+        startActivity(i);
     }
 
     private void SignIn(String username, String password){
@@ -80,7 +110,6 @@ public class MainActivity extends ActionBarActivity {
 
     private void signUp(){
         Intent i = new Intent(this,signUp.class);
-
         startActivity(i);
     }
 
