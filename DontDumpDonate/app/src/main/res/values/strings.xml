@@ -20,6 +20,24 @@
         <item>Caterer</item>
     </string-array>
 
+    <string-array name="donation_category">
+        <item>Clothes</item>
+        <item>Books</item>
+        <item>Stationary</item>
+        <item>Furniture</item>
+        <item>Foods</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="event_category">
+        <item>Blood Donation</item>
+        <item>Kids Charity</item>
+        <item>Old Age Function</item>
+        <item>General</item>
+        <item>Social Cause</item>
+        <item>Other</item>
+    </string-array>
+
     <string-array name="user_category_forgot_password">
         <item>General User</item>
         <item>Caterer</item>

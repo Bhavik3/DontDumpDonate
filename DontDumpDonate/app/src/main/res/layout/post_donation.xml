@@ -23,7 +23,7 @@
         android:layout_below="@+id/textView21"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/category" />
+        android:layout_above="@+id/donation_cat" />
 
     <Button
         android:layout_width="wrap_content"
@@ -38,6 +38,17 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <Spinner
+        android:id="@+id/donation_cat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/donation_category"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentStart="true" />
+
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -45,27 +56,6 @@
         <!--android:id="@+id/textView23"-->
         <!--android:layout_x="6dp"-->
         <!--android:layout_y="190dp" />-->
-
-    <EditText
-        android:layout_width="287dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/category"
-        android:layout_x="70dp"
-        android:layout_y="180dp"
-        android:textColor="#222222"
-        android:textColorHint="#999999"
-        android:background="#FFFFFF"
-        android:padding="10dp"
-
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="15dp"
-        android:hint="Category"
-        android:singleLine="true"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -81,19 +71,17 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/quantity"
-        android:layout_x="72dp"
-        android:layout_y="223dp"
         android:textColor="#222222"
         android:textColorHint="#999999"
         android:background="#FFFFFF"
         android:padding="10dp"
         android:hint="Quantity"
-        android:singleLine="true"
-        android:layout_below="@+id/category"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="15dp"
+        android:singleLine="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/donation_cat"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -101,19 +89,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/address"
-        android:layout_below="@+id/quantity"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:textColor="#222222"
         android:textColorHint="#999999"
         android:background="#FFFFFF"
         android:padding="10dp"
         android:hint="Address"
         android:singleLine="true"
+        android:layout_below="@+id/quantity"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="15dp"
-        />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

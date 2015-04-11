@@ -8,9 +8,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
@@ -32,7 +34,7 @@ public class postDonation extends Fragment{
     Button post;
     EditText Address;
     EditText details;
-    EditText Category;
+    Spinner Category;
     EditText Quantity;
 
     private  profile Profile;
@@ -46,6 +48,7 @@ public class postDonation extends Fragment{
 
     String date;
     String time;
+    String strCategory;
 
     public void setProfile(profile p){
         this.Profile = p;
@@ -60,7 +63,7 @@ public class postDonation extends Fragment{
         View v = inflater.inflate(R.layout.post_donation, container, false);
         post = (Button)v.findViewById(R.id.postDonation);
         details = (EditText)v.findViewById(R.id.DonationDetail);
-        Category = (EditText)v.findViewById(R.id.category);
+        Category = (Spinner)v.findViewById(R.id.donation_cat);
         Quantity = (EditText)v.findViewById(R.id.quantity);
         Address = (EditText)v.findViewById(R.id.address);
 
@@ -70,7 +73,23 @@ public class postDonation extends Fragment{
                 postDonation();
             }
         });
+
+        Category.setOnItemSelectedListener(new CustomOnItemSelectedListener());
         return v;
+    }
+
+    class CustomOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
+            strCategory = parent.getItemAtPosition(pos).toString();
+
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> arg0) {
+            // TODO Auto-generated method stub
+        }
+
     }
 
     private void postDonation(){
@@ -81,7 +100,7 @@ public class postDonation extends Fragment{
             Toast.makeText(getActivity().getApplicationContext(), "please fill all the details..", Toast.LENGTH_LONG).show();
             return;
         }
-        if(details.getText().toString().equals("") || Category.getText().toString().equals("") || Quantity.getText().toString().equals("") ||
+        if(details.getText().toString().equals("") || strCategory.equals("") || Quantity.getText().toString().equals("") ||
                 Address.getText().toString().equals("")) {
             Toast.makeText(getActivity().getApplicationContext(), "please fill all the details..", Toast.LENGTH_LONG).show();
             return;
@@ -117,7 +136,7 @@ public class postDonation extends Fragment{
             params.add(new BasicNameValuePair("donor_id", profile.ID+""));
             params.add(new BasicNameValuePair("time", "\""+time+"\""));
             params.add(new BasicNameValuePair("date", date));
-            params.add(new BasicNameValuePair("category", "\""+Category.getText().toString()+"\""));
+            params.add(new BasicNameValuePair("category", "\""+strCategory+"\""));
             params.add(new BasicNameValuePair("details", "\""+details.getText().toString()+"\""));
             params.add(new BasicNameValuePair("quantity", Quantity.getText().toString()));
             params.add(new BasicNameValuePair("address","\""+Address.getText().toString()+"\""));
