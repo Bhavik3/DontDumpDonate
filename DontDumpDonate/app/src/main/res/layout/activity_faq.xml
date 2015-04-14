@@ -17,13 +17,14 @@ android:id="@+id/scrollView"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="          The idea behind this website and application is that one can donate goods from home to the needy. People do not need to go to NGOs, rather the NGOs will come to them and collect the goods. In this way a lot of resources in good condition can be utilized. Something which is not useful to you, might be of great help to the world.
-        "
+        android:text="The idea behind this website and application is that one can donate goods from home to the needy. People do not need to go to NGOs, rather the NGOs will come to them and collect the goods. In this way a lot of resources in good condition can be utilized. Something which is not useful to you, might be of great help to the world."
         android:id="@+id/textView7"
         android:textSize="15dp"
         android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#0C850E"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,6 +40,7 @@ android:id="@+id/scrollView"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,13 +58,14 @@ android:id="@+id/scrollView"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="          You can donate anything other than money. From books to food , from stationary to furniture to clothes, everything which might be useful to someone else.
-        "
+        android:text="You can donate anything other than money. From books to food , from stationary to furniture to clothes, everything which might be useful to someone else."
         android:id="@+id/textView11"
         android:textSize="15dp"
         android:layout_below="@+id/textView10"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#0C850E"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -78,13 +81,14 @@ android:id="@+id/scrollView"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="          First you need to login on this website by filling a simple form. Then you can go to your homepage and click on the Post Donation button . Simply fill all the details.  All the nearby NGOs will get a post regarding the same.  Now it is upto the NGO if they have want to collect the good, if the quantity is affordable for them to come to your place personally.  If the NGO is interested, they will give you a call regarding the collection and they will come at your time preference only.
-        "
+        android:text="First you need to login on this website by filling a simple form. Then you can go to your homepage and click on the Post Donation button . Simply fill all the details.  All the nearby NGOs will get a post regarding the same.  Now it is upto the NGO if they have want to collect the good, if the quantity is affordable for them to come to your place personally.  If the NGO is interested, they will give you a call regarding the collection and they will come at your time preference only."
         android:id="@+id/textView13"
         android:layout_below="@+id/textView12"
         android:layout_alignParentLeft="true"
         android:textSize="15dp"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#0C850E"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -100,13 +104,14 @@ android:id="@+id/scrollView"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="          Once the goods are collected, you have an option of marking that good as collecte. Your post will be removed from all the other walls.
-        "
+        android:text="Once the goods are collected, you have an option of marking that good as collecte. Your post will be removed from all the other walls."
         android:id="@+id/textView15"
         android:layout_below="@+id/textView14"
         android:layout_alignParentLeft="true"
         android:textSize="15dp"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#0C850E"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -123,13 +128,14 @@ android:id="@+id/scrollView"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="          The NGOs will make sure that they collect the goods at some or the other time, but in case there are no organisations near your house who are interested to collect, you can search for different NGOs from our website who are near you.  You can call them or go to their headoffice.
-        "
+        android:text="The NGOs will make sure that they collect the goods at some or the other time, but in case there are no organisations near your house who are interested to collect, you can search for different NGOs from our website who are near you.  You can call them or go to their headoffice."
         android:id="@+id/textView17"
         android:textSize="15dp"
         android:layout_below="@+id/textView16"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#0C850E"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -145,13 +151,14 @@ android:id="@+id/scrollView"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="          The NGOs are not registered unless the admin feels that the organisation is authenticated . You can always complain to the admin and necessary action will be taken.
-        "
+        android:text="The NGOs are not registered unless the admin feels that the organisation is authenticated . You can always complain to the admin and necessary action will be taken."
         android:id="@+id/textView19"
         android:layout_below="@+id/textView18"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#0C850E"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -167,13 +174,14 @@ android:id="@+id/scrollView"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="          No. We also provide you details of events happening for charity near your address. You will also get posts from the NGOs regarding necessities and problems face by them. You can view all the profile of different NGOs and check about their work. Also you can attend any event being organised for charity, by checking about the details on our website.  The primary focus is that the donations should reach the needy and that people who do not have time can donate from their homes itself.
-        "
+        android:text="No, We also provide you details of events happening for charity near your address. You will also get posts from the NGOs regarding necessities and problems face by them. You can view all the profile of different NGOs and check about their work. Also you can attend any event being organised for charity, by checking about the details on our website.  The primary focus is that the donations should reach the needy and that people who do not have time can donate from their homes itself."
         android:id="@+id/textView22"
         android:textSize="15dp"
         android:layout_below="@+id/textView20"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#0C850E"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -189,13 +197,14 @@ android:id="@+id/scrollView"
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="          The admin will do all the necessary background checks before the NGO is allowed access.
-        "
+        android:text="The admin will do all the necessary background checks before the NGO is allowed access."
         android:id="@+id/textView24"
         android:textSize="15dp"
         android:layout_below="@+id/textView23"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#0C850E"
+        android:layout_marginBottom="20dp"/>
 
 
 </RelativeLayout>
